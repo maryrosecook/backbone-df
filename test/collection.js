@@ -70,6 +70,11 @@ $(document).ready(function() {
     equal(col.get(col.first().cid), col.first());
   });
 
+  test("get with model id of 0", 1, function() {
+    var d2 = d.clone();
+    equal(col.get(d2), d);
+  });
+
   test("get with non-default ids", 5, function() {
     var col = new Backbone.Collection();
     var MongoModel = Backbone.Model.extend({idAttribute: '_id'});
